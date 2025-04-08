@@ -1,30 +1,30 @@
 schema: '2.0'
 stages:
   prepare:
-    cmd: python src/create_features.py
+    cmd: python src/preprocessing.py
     deps:
-    - path: data/adult.data
+    - path: data/MrBeast_youtube_stats.csv
       hash: md5
-      md5: 5d7c39d7b8804f071cdd1f2a7c460872
-      size: 3974305
-    - path: data/adult.test
+      md5: d16489d075811f4668cf3c5660618cf9
+      size: 146807
+    - path: src/preprocessing.py
       hash: md5
-      md5: 366c746021dc50ad9d933d2817612fc9
-      size: 2003132
-    - path: src/create_features.py
-      hash: md5
-      md5: b93aea27ba45f8b24bdd52928f1f2b99
-      size: 2564
+      md5: a3a6942605b05250ad6ef7e6f9af2279
+      size: 2336
+    params:
+      params.yaml:
+        split.random_state: 42
+        split.test_size: 0.2
     outs:
-    - path: data/pipeline.pkl
+    - path: data/mrbeast_pipeline.pkl
       hash: md5
-      md5: 0ccf6f7c024f21a5d727f2e45bd61728
-      size: 6104
-    - path: data/processed_test_data.csv
+      md5: 5fe5cf384cd2fe1dad1fa457ebd7e73e
+      size: 1734
+    - path: data/processed_mrbeast_test.csv
       hash: md5
-      md5: a59c8daac38fe1ca84dda2b458ee762a
-      size: 5409602
-    - path: data/processed_train_data.csv
+      md5: aca9773aaa0bd0aea8ac59c2ce33b366
+      size: 3606
+    - path: data/processed_mrbeast_train.csv
       hash: md5
-      md5: adf63b6ce20f7ee74f63d5dabb325226
-      size: 10829967
+      md5: 2b988cc9b838ad1f66f516e3248c2162
+      size: 14081
